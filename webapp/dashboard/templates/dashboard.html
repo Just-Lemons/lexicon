@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Scan Results</h2>
+
+{% if data %}
+    <div class="card">
+        <h3>Target: {{ data.target }}</h3>
+        <p>Pages Scanned: {{ data.pages_scanned }}</p>
+        <p>Risk Score: {{ data.risk_score }}</p>
+    </div>
+
+    <h3>Vulnerabilities</h3>
+
+    {% for v in data.vulnerabilities %}
+        <div class="vuln {{ v.severity }}">
+            <h4>{{ v.type }}</h4>
+            <p>URL: {{ v.url }}</p>
+            <p>Severity: {{ v.severity }}</p>
+        </div>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

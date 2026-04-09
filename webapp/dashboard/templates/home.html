@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="hero">
+    <h1>DetectThreats</h1>
+
+    <form action="/scan/">
+        <input type="text" name="url" placeholder="Enter website URL" required>
+        <button type="submit">Scan Now</button>
+    </form>
+</div>
+
+{% endblock %}
